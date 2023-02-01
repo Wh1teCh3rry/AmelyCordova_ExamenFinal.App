@@ -14,10 +14,8 @@ public partial class AC_ViewItems : ContentPage
 
     public async void Button_Clicked(object sender, EventArgs e)
     {
-        //string cadena = Buscador.Text;
         var request = new HttpRequestMessage();
         request.RequestUri = new Uri("https://www.thecocktaildb.com/api/json/v1/1/random.php");
-        //request.RequestUri = new Uri("url" + cadena);
         request.Method = HttpMethod.Get;
         request.Headers.Add("Accept", "application/json"); var client = new HttpClient(); HttpResponseMessage response = await client.SendAsync(request);
         if (response.StatusCode == HttpStatusCode.OK)

@@ -55,13 +55,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="ACViews\AC_DrinkItemPage.xaml.cs">
+	    <DependentUpon>AC_DrinkItemPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="ACViews\AC_DrinkListPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ACViews\AC_ViewItems.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ACViews\DrinkItemPage.xaml">
+	  <MauiXaml Update="ACViews\AC_DrinkItemPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
