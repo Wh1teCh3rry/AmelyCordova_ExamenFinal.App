@@ -1,5 +1,5 @@
 ﻿using SQLite;
-using AmelyCordova_ExamenFinal.ACModels
+using AmelyCordova_ExamenFinal.ACModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,18 +21,18 @@ namespace AmelyCordova_ExamenFinal.ACData
             if (conn != null)
                 return;
             conn = new SQLiteConnection(_dbPath);
-            conn.CreateTable<AC_Cocktail>();
+            conn.CreateTable<Drink>();
         }
-        public int AddNewElement(AC_Cocktail cocktail)
+        public int AddNewElement(Drink cocktail)
         {
             Init();
             int result = conn.Insert(cocktail);
             return result;
         }
-        public List<AC_Cocktail> GetAllElements()
+        public List<Drink> GetAllElements()
         {
             Init();
-            List<AC_Cocktail> cocktails = conn.Table<C_Cocktail>().ToList();
+            List<Drink > cocktails = conn.Table<Drink>().ToList();
             return cocktails;
         }
     }
