@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AmelyCordova_ExamenFinal.ACViews.DrinkItemPage"
+             xmlns:local="clr-namespace:AmelyCordova_ExamenFinal.ACViewModels"
+             Title="DrinkItemPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+            Spacing="10"
+            VerticalOptions="StartAndExpand">
+
+            <Label Text="AC_Nombre" />
+            <Entry x:Name="ACnameB" Text="{Binding strDrink}" />
+
+            <Label Text="AC_Descripción" />
+            <Entry x:Name="ACdescB" Text="{Binding strDrinkAlternate}" />
+
+            <Label Text="Fecha" />
+            <Label x:Name="fuente"
+                Text="{Binding DateTime, StringFormat='{0:dd/MM/yyyy HH:mm:ss}'}">
+                <Label.BindingContext>
+                    <local:DateViewModel />
+                </Label.BindingContext>
+            </Label>
+
+            <Button Text="AC_Guardar"
+            Clicked="AC_OnSaveClicked" />
+            <Button Text="AC_Borrar"
+            Clicked="AC_OnDeleteClicked" />
+            <Button Text="AC_Cancelar"
+            Clicked="AC_OnCancelClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

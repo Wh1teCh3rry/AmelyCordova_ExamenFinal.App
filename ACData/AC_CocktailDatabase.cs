@@ -23,17 +23,29 @@ namespace AmelyCordova_ExamenFinal.ACData
             conn = new SQLiteConnection(_dbPath);
             conn.CreateTable<Drink>();
         }
-        public int AddNewElement(Drink cocktail)
+        public int AC_AddNewItem(Drink drink)
         {
             Init();
-            int result = conn.Insert(cocktail);
-            return result;
+            if (drink.Id != 0)
+            {
+                return conn.Update(drink);
+            }
+            else
+            {
+                return conn.Insert(drink);
+            }
         }
-        public List<Drink> GetAllElements()
+        public List<Drink> AC_GetAll()
         {
             Init();
-            List<Drink > cocktails = conn.Table<Drink>().ToList();
-            return cocktails;
+            List<Drink> drinks = conn.Table<Drink>().ToList();
+            return drinks;
+        }
+
+        public int AC_DeleteItem(Drink drink)
+        {
+            Init();
+            return conn.Delete(drink);
         }
     }
 }

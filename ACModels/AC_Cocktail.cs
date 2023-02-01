@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace AmelyCordova_ExamenFinal.ACModels
     [Table("cocktail")]
     public class Drink
     {
+        public int Id { get; set; }
         public string idDrink { get; set; }
         public string strDrink { get; set; }
         public object strDrinkAlternate { get; set; }
@@ -59,6 +61,9 @@ namespace AmelyCordova_ExamenFinal.ACModels
         public object strImageAttribution { get; set; }
         public string strCreativeCommonsConfirmed { get; set; }
         public string dateModified { get; set; }
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime ACcreationDate { get; set; }
     }
 
     public class Root

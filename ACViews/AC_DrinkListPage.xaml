@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AmelyCordova_ExamenFinal.ACViews.AC_DrinkListPage"
+             xmlns:models="clr-namespace:AmelyCordova_ExamenFinal.ACModels"
+             Title="AC_DrinkListPage">
+    <Grid RowDefinitions="*,Auto">
+        <CollectionView x:Name="ACdrinkList"
+                         SelectionMode="Single"
+                         SelectionChanged="AC_CollectionView_SelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Drink">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Id}" />
+                        <Label Grid.Column="1" Text="{Binding strDrink}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Grid.Row="1" Text="AC_Añadir nuevo registro"
+                Clicked="AC_OnItemAdded"
+                Margin="20"/>
+    </Grid>
+</ContentPage>

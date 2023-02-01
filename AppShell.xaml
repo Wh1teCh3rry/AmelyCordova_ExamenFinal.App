@@ -8,7 +8,7 @@
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:AC_ViewItems}"
+        ContentTemplate="{DataTemplate local:AC_DrinkListPage}"
         Route="MainPage" />
 
 </Shell>
